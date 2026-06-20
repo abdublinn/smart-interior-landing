@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Interior — мебель на заказ для дизайнеров интерьера | Партнёрам</title>
+  <meta name="description" content="Премиум-мебель на заказ для ваших проектов в Санкт-Петербурге. Партнёрство равных: вместе доводим проект до результата и бережём репутацию друг друга перед вашим заказчиком." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Smart Interior — партнёрам-дизайнерам" />
+  <meta property="og:description" content="Партнёрство равных: бережём репутацию друг друга перед вашим клиентом. Премиум-мебель на заказ, СПб." />
+  <meta property="og:locale" content="ru_RU" />
+  <!-- og:image — добавить ссылку на превью-картинку после загрузки ассетов -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap");
+    :root{
+      --bronze:#b07d3f; --bronze-deep:#8c5e26; --bronze-soft:#efe3d2;
+      --graphite:#16181d; --graphite-2:#1d2026; --graphite-soft:#2b2f37;
+      --ivory:#f7f3ec; --sand:#efe7da; --line:#e0d6c6; --white:#fff;
+      --text:#1b1d22; --muted:#5f6470; --radius:14px; --maxw:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--ivory);color:var(--text);font-family:"Manrope","Segoe UI",sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:var(--bronze-deep);text-decoration:none}
+    h1,h2,h3,h4{font-family:"Oswald","Arial Narrow",sans-serif;font-weight:700;line-height:1.08;margin:0}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:16px;padding:15px 26px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:.15s;font-family:"Manrope",sans-serif}
+    .btn-primary{background:var(--bronze);color:#fff}
+    .btn-primary:hover{background:var(--bronze-deep)}
+    .btn-light{background:#fff;color:var(--graphite)}
+    .btn-light:hover{background:var(--sand)}
+    .eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.22em;font-size:12px;font-weight:800;color:var(--bronze-deep)}
+    .eyebrow.on-dark{color:var(--bronze)}
+    section{padding:84px 0}
+    .section-head{max-width:780px;margin-bottom:44px}
+    .section-head h2{font-size:38px;text-transform:uppercase;color:var(--graphite);margin:10px 0 14px}
+    .section-head p{font-size:19px;color:var(--muted);margin:0}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .logo{font-family:"Oswald",sans-serif;font-weight:700;font-size:23px;letter-spacing:.04em;text-transform:uppercase;color:var(--graphite)}
+    .logo span{color:var(--bronze)}
+    .nav-links{display:flex;gap:26px;align-items:center}
+    .nav-links a{color:var(--graphite-soft);font-size:15px;font-weight:600}
+    .nav-links a:hover{color:var(--bronze-deep)}
+    .nav-cta{display:flex;align-items:center;gap:14px}
+    .burger{display:none;background:none;border:0;cursor:pointer;width:30px;height:24px}
+    .burger span{display:block;height:3px;background:var(--graphite);border-radius:3px;margin:4px 0;transition:.2s}
+
+    .hero{background:linear-gradient(135deg,#15171c 0%,#1d2026 55%,#3a2c1a 130%);color:#fff;padding:96px 0 90px;position:relative;overflow:hidden}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 12%,rgba(176,125,63,.34),transparent 42%);pointer-events:none}
+    .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .hero h1{font-size:46px;text-transform:uppercase;color:#fff;margin:16px 0 20px;letter-spacing:.01em}
+    .hero p.sub{font-size:20px;color:rgba(255,255,255,.85);max-width:560px;margin:0 0 30px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-trust{margin-top:34px;display:flex;gap:26px;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.7)}
+    .hero-trust b{color:var(--bronze);font-family:"Oswald",sans-serif;font-size:17px;display:block}
+    .hero-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:30px;backdrop-filter:blur(4px)}
+    .hero-card h3{color:#fff;font-size:21px;text-transform:uppercase;margin-bottom:16px}
+    .hero-card ul{margin:0;padding:0;list-style:none}
+    .hero-card li{padding:10px 0 10px 28px;position:relative;font-size:15.5px;color:rgba(255,255,255,.88);border-bottom:1px solid rgba(255,255,255,.08)}
+    .hero-card li:last-child{border-bottom:0}
+    .hero-card li::before{content:"";position:absolute;left:0;top:16px;width:11px;height:11px;border-radius:50%;background:var(--bronze)}
+
+    .grid{display:grid;gap:22px}
+    .g2{grid-template-columns:1fr 1fr}
+    .g3{grid-template-columns:repeat(3,1fr)}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+    .card .ico{width:46px;height:46px;border-radius:12px;background:var(--bronze-soft);color:var(--bronze-deep);display:flex;align-items:center;justify-content:center;font-family:"Oswald",sans-serif;font-size:22px;font-weight:700;margin-bottom:16px}
+    .card h3{font-size:20px;text-transform:uppercase;color:var(--graphite);margin-bottom:10px}
+    .card p{margin:0;font-size:15.5px;color:var(--graphite-soft)}
+    .card.opt{border-style:dashed;background:#fcf9f4}
+    .opt-tag{display:inline-block;margin-left:8px;font-family:"Manrope";font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--bronze-deep);vertical-align:middle;background:var(--bronze-soft);padding:2px 7px;border-radius:6px}
+
+    .pains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+    .pain{background:#fff;border:1px solid var(--line);border-left:4px solid var(--bronze);border-radius:10px;padding:20px}
+    .pain b{display:block;font-family:"Oswald";text-transform:uppercase;font-size:16px;margin-bottom:6px;color:var(--graphite)}
+    .pain span{font-size:14.5px;color:var(--muted)}
+
+    .dark{background:var(--graphite);color:#fff}
+    .dark .section-head h2{color:#fff}
+    .dark .section-head p{color:rgba(255,255,255,.8)}
+    .shield{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .shield ul{margin:0;padding:0;list-style:none}
+    .shield li{padding:14px 0 14px 34px;position:relative;font-size:17px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .shield li::before{content:"✓";position:absolute;left:0;top:13px;color:var(--bronze);font-weight:800;font-size:18px}
+    .pull{font-family:"Oswald",sans-serif;font-size:25px;line-height:1.25;text-transform:uppercase}
+    .pull .hl{color:var(--bronze)}
+
+    .soft-note{background:var(--bronze-soft);border:1px solid #e4d2b4;border-radius:var(--radius);padding:26px}
+    .soft-note b{font-family:"Oswald";text-transform:uppercase;color:var(--bronze-deep)}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;position:relative}
+    .step .no{width:42px;height:42px;border-radius:50%;background:var(--graphite);color:#fff;font-family:"Oswald";font-size:19px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+    .step h3{font-size:18px;text-transform:uppercase;margin-bottom:8px}
+    .step p{margin:0;font-size:14.5px;color:var(--graphite-soft)}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .panel{border-radius:var(--radius);padding:28px}
+    .panel.give{background:#fff;border:1px solid var(--line)}
+    .panel.keep{background:#fbf7f0;border:1px solid #e7dcc8}
+    .panel h3{font-size:20px;text-transform:uppercase;margin-bottom:14px}
+    .panel ul{margin:0;padding-left:20px}
+    .panel li{margin:9px 0;font-size:15.5px}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+    .stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center}
+    .stat .n{font-family:"Oswald";font-size:34px;color:var(--graphite);line-height:1}
+    .stat .c{font-size:13.5px;color:var(--muted);margin-top:8px}
+    .ph{color:var(--bronze-deep);font-weight:700;background:rgba(176,125,63,.14);padding:0 4px;border-radius:3px}
+
+    .reviews{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .review{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+    .review p{font-size:17px;margin:0 0 14px;font-style:italic}
+    .review .who{font-weight:700;color:var(--graphite)}
+
+    .faq{max-width:840px;margin:0 auto}
+    .q{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+    .q summary{cursor:pointer;list-style:none;padding:20px 24px;font-family:"Oswald";text-transform:uppercase;font-size:17px;color:var(--graphite);display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .q summary::-webkit-details-marker{display:none}
+    .q summary::after{content:"+";color:var(--bronze);font-size:24px;font-family:"Manrope"}
+    .q[open] summary::after{content:"–"}
+    .q .a{padding:0 24px 20px;color:var(--graphite-soft);font-size:15.5px}
+
+    .cta-final{background:linear-gradient(135deg,#15171c,#241a0e);color:#fff}
+    .form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:30px}
+    .form label{display:block;font-size:13px;color:rgba(255,255,255,.7);margin:14px 0 6px}
+    .form input{width:100%;padding:13px 15px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font-size:16px;font-family:"Manrope"}
+    .form input::placeholder{color:rgba(255,255,255,.4)}
+    .form .btn{width:100%;justify-content:center;margin-top:22px}
+    .form small{display:block;margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.55);text-align:center}
+    .cta-final h2{font-size:40px;text-transform:uppercase;color:#fff;margin-bottom:18px}
+    .cta-final .alt{margin-top:24px;font-size:15px;color:rgba(255,255,255,.8)}
+    .cta-final .alt a{color:var(--bronze)}
+
+    footer{background:var(--graphite-2);color:rgba(255,255,255,.7);padding:48px 0 30px;font-size:14.5px}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;margin-bottom:26px}
+    footer h4{font-family:"Oswald";text-transform:uppercase;color:#fff;font-size:16px;margin-bottom:14px}
+    footer a{color:rgba(255,255,255,.8)}
+    footer a:hover{color:var(--bronze)}
+    .legal-note{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.5}
+
+    .float{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;flex-direction:column;gap:12px}
+    .float a{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.25);font-weight:700;color:#fff;font-size:13px;font-family:"Oswald"}
+    .float .tg{background:#2aabee}
+    .float .wa{background:#25d366}
+
+    @media (max-width:920px){
+      .hero .wrap,.shield,.form-wrap,.split{grid-template-columns:1fr}
+      .g2,.g3,.steps,.stats,.reviews,.pains,.foot-grid{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--ivory);padding:18px 24px;border-bottom:1px solid var(--line);gap:14px}
+      .burger{display:block}
+      .hero h1{font-size:32px}
+      .section-head h2,.cta-final h2{font-size:28px}
+      section{padding:60px 0}
+    }
+    @media (max-width:920px){ .stats{grid-template-columns:1fr 1fr} .steps{grid-template-columns:1fr 1fr} }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="logo">SMART <span>INTERIOR</span></div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#partner">Партнёрство</a>
+        <a href="#together">Репутация</a>
+        <a href="#how">Как работаем</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#get" class="btn btn-primary">Получить пакет</a>
+        <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. HERO -->
+  <section class="hero" style="padding-top:80px">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow on-dark">Дизайнерам и архитекторам · Санкт-Петербург</span>
+        <h1>Партнёрство равных: бережём репутацию друг друга перед вашим клиентом</h1>
+        <p class="sub">Премиум-мебель на заказ для ваших проектов. Мы в одной лодке: вместе доводим проект до результата и не подставляем друг друга перед заказчиком.</p>
+        <div class="hero-cta">
+          <a href="#get" class="btn btn-primary">Получить партнёрский пакет (PDF)</a>
+          <a href="https://t.me/" class="btn btn-light" target="_blank" rel="noopener">Написать в Telegram</a>
+        </div>
+        <div class="hero-trust">
+          <div><b>Полный цикл</b> работаем по вашему дизайн-проекту</div>
+          <div><b>Собственное</b> производство в СПб</div>
+          <div><b>До результата</b> доводим проект вместе</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Что мы даём партнёру</h3>
+        <ul>
+          <li>Профессиональную группу в Телеграме для техвопросов</li>
+          <li>Закреплённого персонального менеджера</li>
+          <li>Реакцию на любой вопрос по проекту — в первую очередь</li>
+          <li>Регулярную отчётность и фотосъёмку ваших проектов</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ПАРТНЁРСТВО (эмпатия без наезда) -->
+  <section id="partner">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Почему партнёрство</span>
+        <h2>Рекомендуя нас, вы доверяете нам своё имя</h2>
+        <p>Мы это ценим. Поэтому мы все — вы, мы и заказчик — заинтересованы в одном: чтобы проект состоялся и все остались довольны. Мы не перекладываем сложности на дизайнера и не выясняем при клиенте, кто виноват. <span class="ph">[здесь — формулировка клиента]</span></p>
+      </div>
+      <div class="pains">
+        <div class="pain"><b>Сроки</b><span>Держим сроки и предупреждаем заранее, если что-то меняется.</span></div>
+        <div class="pain"><b>Качество при клиенте</b><span>Накладки решаем сами, не превращая их в проблему дизайнера.</span></div>
+        <div class="pain"><b>«Кто виноват»</b><span>Не выясняем это при заказчике — вместе ищем решение.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ВТОРОЙ КЛИЕНТ / РАВНЫЕ -->
+  <section style="background:var(--sand)">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Наши обязательства перед вами</span>
+        <h2>Мы относимся к дизайнеру как к партнёру, а не как к каналу клиентов</h2>
+        <p>У вас есть свой клиент. У нас — вы. Заботимся о вас отдельно: своим менеджером, профессиональной группой и общими гарантиями. И так же, как мы бережём ваше имя, рассчитываем, что вы бережёте наше — это партнёрство равных.</p>
+      </div>
+      <div class="grid g3">
+        <div class="card"><div class="ico">1</div><h3>Профессиональная группа в Телеграме</h3><p>Закрытая группа для партнёров: задаёте технические вопросы — вывод коммуникаций, закладные, встройка — и получаете ответ от наших специалистов. Рекомендательный формат, без общей клиентской линии. <span class="ph">[запускаем]</span></p></div>
+        <div class="card"><div class="ico">2</div><h3>Личный менеджер</h3><p>За вами закреплён один менеджер, который знает ваши проекты и ваш ритм. Гарантированное время ответа в рабочее время — <span class="ph">[N часов]</span>. Один вход, а не «каждый раз новый человек».</p></div>
+        <div class="card"><div class="ico">3</div><h3>Реакция по проекту — первыми</h3><p>На любую претензию по вашему проекту реагируем в первую очередь и доводим до решения. Не выясняем при клиенте, кто виноват, — устраняем.</p></div>
+        <div class="card"><div class="ico">4</div><h3>Регулярная отчётность</h3><p>Держим вас в курсе хода проекта — статусы по этапам, без необходимости запрашивать. Вы всегда знаете, на какой стадии ваш заказ.</p></div>
+        <div class="card"><div class="ico">5</div><h3>Фотосъёмка и продвижение</h3><p>Снимаем готовые объекты и продвигаем проекты у себя. Наше продвижение — это и ваше продвижение. Авторскую визуализацию без вашего согласия не публикуем.</p></div>
+        <div class="card opt"><div class="ico">6</div><h3>Экскурсия на производство<span class="opt-tag">по согласованию</span></h3><p>Покажем цех и шоурум — вам и вашему клиенту. Живое доверие к качеству работает лучше любой презентации.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. РЕПУТАЦИЯ ДРУГ ДРУГА (dark) -->
+  <section id="together" class="dark">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow on-dark">Главное</span>
+        <h2>Как мы защищаем репутацию друг друга</h2>
+      </div>
+      <div class="shield">
+        <ul>
+          <li>Мы в одной лодке: общий интерес — чтобы проект состоялся</li>
+          <li>Не выясняем при вашем клиенте, кто виноват</li>
+          <li>Чья бы ни была накладка — вместе ищем решение и минимизируем последствия</li>
+          <li>Реагируем на вопросы по партнёрским проектам в первую очередь</li>
+        </ul>
+        <div>
+          <p class="pull">Систему характеризует не ошибка, <span class="hl">а реакция на ошибку</span>.</p>
+          <p style="color:rgba(255,255,255,.7);margin-top:16px">И того же — бережного отношения к общему имени — мы по-партнёрски ждём от вас.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ВЫГОДА КЛИЕНТУ (деньги мягко) -->
+  <section>
+    <div class="wrap">
+      <div class="grid g2" style="align-items:center">
+        <div class="section-head" style="margin-bottom:0">
+          <span class="eyebrow">По вашей рекомендации</span>
+          <h2>Что получает ваш клиент</h2>
+          <p>Клиент, который приходит от вас, для нас особенный. Мы ведём проект так, чтобы он остался доволен и сказал спасибо именно вам.</p>
+          <ul style="color:var(--graphite-soft);font-size:16px;padding-left:20px">
+            <li>Понятные условия и ведение проекта до результата.</li>
+            <li><b>Единая цена</b> — ваше партнёрство не делает мебель дороже для клиента.</li>
+            <li>Сопровождение в удобном вам режиме — общаемся с клиентом напрямую, через вас или смешанно.</li>
+          </ul>
+        </div>
+        <div class="soft-note">
+          <p><b>О партнёрском вознаграждении</b></p>
+          <p>Работаем честно и прозрачно, по агентскому договору — без наценок поверх цены клиента. Конкретные условия обсуждаем с вами лично: поможем выбрать удобную форму оформления.</p>
+          <p style="margin-bottom:0"><a href="#get"><b>Условия — в партнёрском пакете →</b></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ПРОЕКТ / ГРАНИЦЫ -->
+  <section style="background:var(--sand)">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Работа над проектом</span>
+        <h2>Что входит в нашу работу по проекту</h2>
+      </div>
+      <div class="split">
+        <div class="panel give">
+          <h3>Берём на себя</h3>
+          <ul>
+            <li>замер нашими силами и расчёт под конкретное помещение;</li>
+            <li>подгонку дизайн-проекта под замер помещения;</li>
+            <li>подготовку образцов материалов и выкрасов фасадов;</li>
+            <li>выезд менеджера для согласования — работаем в связке, не отправляем «решайте сами».</li>
+          </ul>
+        </div>
+        <div class="panel keep">
+          <h3>Производство и сервис</h3>
+          <ul>
+            <li>проект ведём по вашему дизайну;</li>
+            <li>рабочую документацию (чертежи, раскрой) готовим мы — это производственный инструмент;</li>
+            <li>доставку, подъём и монтаж обеспечиваем сами; за привлечённых подрядчиков отвечаем и держим сроки по договору.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. КАРТА ВЗАИМОДЕЙСТВИЯ (полная, аккордеон) -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Порядок работы</span>
+        <h2>Путь проекта: что делаем мы и где помогает ваш вклад</h2>
+        <p>Полная карта по этапам. Чем полнее вы передаёте проект и вводные — тем точнее КП и тем меньше мы дёргаем вас по мелочам. Это идеальная картина; в реальности участие — по вашей квалификации и желанию.</p>
+      </div>
+      <div class="faq">
+        <details class="q" open><summary>Этап 0. Заявка — входная информация</summary><div class="a"><b>Мы:</b> принимаем проект, считаем, готовим КП, рассказываем условия (агентский договор). <b>Вы:</b> присылаете проект в любом виде — работаем с любым уровнем готовности: <em>базовый</em> — эскизы от руки (просим референс + размеры на плане); <em>средний</em> — визуализации + план/развёртки или текстовое описание изделий; <em>хай-класс</em> — развёртки и чертежи + визуализации. <b>Идеал:</b> полный проект с планом электрики, пожелания по материалам, бюджет заказчика, сроки, адрес объекта.</div></details>
+        <details class="q"><summary>Этап 1. Коммерческое предложение</summary><div class="a"><b>Мы:</b> готовим КП и дорабатываем по вашим замечаниям под запрос заказчика. <b>Вы:</b> смотрите КП до отправки заказчику; сообщаете, что отправили и когда можно за обратной связью; если ведёте переговоры сами — даёте знать решение; по возможности — конкурирующие КП.</div></details>
+        <details class="q"><summary>Этап 2. Решение и оформление</summary><div class="a"><b>Мы:</b> оформляем заказ, договор, принимаем оплату. <b>Вы:</b> сообщаете, как заказчик оформляет и оплачивает; по возможности участвуете при договоре и выборе материалов.</div></details>
+        <details class="q"><summary>Этап 3. Подбор материалов</summary><div class="a"><b>Мы:</b> подбираем материалы, делаем выкрасы. <b>Вы:</b> утверждаете. <b>Важно:</b> сначала подбираем цвет мебели (выкрас), затем под него — цвет стен. Так меньше переделок выкрасов.</div></details>
+        <details class="q"><summary>Этап 4. Эскизы и техническое задание</summary><div class="a"><b>Мы:</b> составляем эскизы и ТЗ, переводим проект на язык производства. <b>Вы:</b> вносите корректировки; если не нравится — предлагаете альтернативу; проверяете ТЗ на соответствие проекту; согласование ТЗ с заказчиком ведёте вы — «на его языке», чтобы при подписании не было сюрпризов.</div></details>
+        <details class="q"><summary>Этап 5. Изготовление</summary><div class="a"><b>Мы:</b> изготавливаем, держим вас в курсе. <b>Вы:</b> по вопросам, требующим мнения, — подбор шпона, раскладка «рубашки»; на выездах — комментарии по отделке; при черновом замере — данные по полам, потолкам, узлам.</div></details>
+        <details class="q"><summary>Этап 6. Монтаж и приёмка</summary><div class="a"><b>Мы:</b> монтируем, проверяем соответствие ТЗ и проекту. <b>Вы:</b> участвуете в приёмке; рекламации передаёте напрямую нам — до того, как заметит заказчик (мелочи устраняем без лишнего шума); подсвечиваете нюансы.</div></details>
+        <details class="q"><summary>Этап 7. После сдачи объекта</summary><div class="a"><b>Мы:</b> оформляем кейс, продвигаем проект. <b>Вы:</b> участвуете в съёмке (reels), рассказываете историю объекта, по возможности — отзыв.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. ПРОИЗВОДСТВО / ДОВЕРИЕ -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Кто мы</span>
+        <h2>Производство полного цикла</h2>
+        <p>Работаем по вашему дизайн-проекту: готовим техническое задание под собственные станки и подбираем лучшую комплектацию. Доставка, подъём и монтаж — нашими силами, с контролем подрядчиков и сроков.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n"><span class="ph">2010</span></div><div class="c">Год основания <span class="ph">[уточнить]</span></div></div>
+        <div class="stat"><div class="n"><span class="ph">[N]</span></div><div class="c">Проектов в месяц <span class="ph">[уточнить]</span></div></div>
+        <div class="stat"><div class="n"><span class="ph">[N]</span> мес</div><div class="c">Гарантия на мебель <span class="ph">[уточнить]</span></div></div>
+        <div class="stat"><div class="n">100%</div><div class="c">Доводим проект до результата</div></div>
+      </div>
+      <p style="font-size:14px;color:var(--muted);margin-top:18px">Материалы и фурнитура проверенных брендов <span class="ph">[уточнить перечень]</span>. Цифры производства заполняются реальными данными компании.</p>
+    </div>
+  </section>
+
+  <!-- 9. ДЛЯ АГЕНТСТВ -->
+  <section style="background:var(--sand)">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:center">
+        <div class="section-head" style="margin-bottom:0">
+          <span class="eyebrow">Дизайн-бюро и агентствам</span>
+          <h2>Работаете командой?</h2>
+          <p>Для агентств — отдельный формат сотрудничества.</p>
+        </div>
+        <div class="panel give">
+          <ul>
+            <li>общая встреча с руководителем бюро;</li>
+            <li>коллективная экскурсия на производство для всех дизайнеров агентства;</li>
+            <li>единые условия и общий менеджер для команды.</li>
+          </ul>
+          <p style="margin:14px 0 0"><a href="#get"><b>Обсудить формат для бюро →</b></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. КАК НАЧАТЬ -->
+  <section class="dark" style="background:var(--graphite)">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow on-dark">Старт</span>
+        <h2>Как начать работать с нами</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="no">1</div><h3>Заявка / пакет</h3><p>Скачайте партнёрский пакет и оставьте контакты — расскажем про условия.</p></div>
+        <div class="step"><div class="no">2</div><h3>Знакомство</h3><p>Закрепляем за вами персонального менеджера и доступ в профессиональную группу.</p></div>
+        <div class="step"><div class="no">3</div><h3>Первый проект</h3><p>Ведём по максимальному стандарту: менеджер на связи, вопросы по технике — в группе.</p></div>
+        <div class="step"><div class="no">4</div><h3>Растём вместе</h3><p>Фотосъёмка ваших проектов, совместное продвижение, постоянные условия.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. ОТЗЫВЫ -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Нам доверяют</span>
+        <h2>Отзывы</h2>
+      </div>
+      <div class="reviews">
+        <div class="review"><p>«Отличная работа. Всё сделали качественно и аккуратно».</p><div class="who">Ирина Цэруш</div></div>
+        <div class="review"><p>«Высокий профессионализм и безупречное знание своего дела».</p><div class="who">С. В. Иванов</div></div>
+      </div>
+      <p style="font-size:14px;color:var(--muted);margin-top:18px"><span class="ph">[Добавить 1–2 отзыва дизайнеров и кейс-историю «была накладка — решили вместе» — клиент отберёт]</span></p>
+    </div>
+  </section>
+
+  <!-- 12. FAQ -->
+  <section id="faq" style="background:var(--sand)">
+    <div class="wrap">
+      <div class="section-head" style="margin:0 auto 40px;text-align:center">
+        <span class="eyebrow">Частые вопросы</span>
+        <h2>Вопросы дизайнеров</h2>
+      </div>
+      <div class="faq">
+        <details class="q"><summary>Платите ли вы за рекомендации?</summary><div class="a">Мы строим партнёрство, а не покупаем рекомендации. Партнёрское сопровождение оформляем по агентскому договору. Условия обсуждаем лично — честно и прозрачно, без наценок поверх цены клиента.</div></details>
+        <details class="q"><summary>Кто отвечает, если на объекте возникла накладка?</summary><div class="a">Мы — в первую очередь. Не выясняем при вашем клиенте, кто виноват: чья бы ни была накладка, вместе ищем решение и минимизируем последствия. Систему характеризует не ошибка, а реакция на неё.</div></details>
+        <details class="q"><summary>Закрепляете ли вы клиента за мной?</summary><div class="a">Да. Клиент, которого вы привели, закреплён за вами — достаточно предупредить нас на старте. Ведём его вместе по согласованному с вами режиму.</div></details>
+        <details class="q"><summary>Что с фотографиями и продвижением проектов?</summary><div class="a">Готовые объекты мы снимаем и продвигаем у себя — ваше продвижение идёт вместе с нашим. Авторскую визуализацию без вашего согласия не публикуем.</div></details>
+        <details class="q"><summary>Как оформляется сотрудничество?</summary><div class="a">По агентскому договору. Поможем выбрать удобную форму оформления вознаграждения. Подробности — у партнёрского менеджера.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. ФИНАЛЬНЫЙ CTA + ФОРМА -->
+  <section id="get" class="cta-final">
+    <div class="wrap">
+      <div class="form-wrap">
+        <div>
+          <h2>Получите партнёрский пакет</h2>
+          <p style="color:rgba(255,255,255,.85);font-size:18px">Внутри — как мы работаем с дизайнерами, что берём на себя и как защищаем репутацию друг друга. Пришлём на почту, дальше — по вашему запросу.</p>
+          <p class="alt">Или сразу напишите нам: <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> · <a href="https://wa.me/79990233403" target="_blank" rel="noopener">WhatsApp</a> · <a href="tel:+79312553745">+7 (931) 255-37-45</a></p>
+        </div>
+        <!-- Форма: подключить к Битрикс24 (webhook/CRM-форма). После отправки — отдавать PDF-кит (kit/smart-interior-partner-kit.pdf). -->
+        <form class="form" id="partnerForm" action="#" method="post" onsubmit="return submitForm(event)">
+          <label for="f-name">Имя</label>
+          <input id="f-name" name="name" placeholder="Как к вам обращаться" required />
+          <label for="f-phone">Телефон или мессенджер</label>
+          <input id="f-phone" name="phone" placeholder="+7 ___ ___ __ __" required />
+          <label for="f-email">E-mail (куда отправить пакет)</label>
+          <input id="f-email" name="email" type="email" placeholder="you@studio.ru" required />
+          <label for="f-studio">Студия (необязательно)</label>
+          <input id="f-studio" name="studio" placeholder="Название студии / сайт" />
+          <button type="submit" class="btn btn-primary">Получить пакет (PDF)</button>
+          <small>Не спамим. Пакет придёт на почту, дальше — только по вашему запросу.</small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="logo" style="color:#fff">SMART <span>INTERIOR</span></div>
+          <p style="margin-top:12px">Умный подход к вашему дому. Премиум-мебель на заказ в Санкт-Петербурге: кухни, шкафы-купе, прихожие, ванные, дизайнерские столы.</p>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <p>+7 (931) 255-37-45<br>
+          WhatsApp: +7 (999) 023-34-03<br>
+          <a href="mailto:shia.smart@yandex.ru">shia.smart@yandex.ru</a><br>
+          СПб, Михайловский пер., 7А</p>
+        </div>
+        <div>
+          <h4>Соцсети</h4>
+          <p><a href="https://kuhnismart.ru/" target="_blank" rel="noopener">kuhnismart.ru</a><br>
+          Instagram: @smartinterior_spb<br>
+          <a href="#">VK</a> · <a href="#">Telegram</a> · Pinterest</p>
+        </div>
+      </div>
+      <div class="legal-note">
+        Эта страница описывает наши намерения и подход к партнёрству с дизайнерами и не является публичной офертой. Все обязательства между дизайнером и компанией закрепляются договором; условия, указанные здесь, уточняются и фиксируются при его заключении. © Smart Interior, Санкт-Петербург. Реквизиты: <span class="ph">[ООО/ИП, ИНН, ОГРН — уточнить]</span>.
+      </div>
+    </div>
+  </footer>
+
+  <div class="float">
+    <a class="tg" href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+    <a class="wa" href="https://wa.me/79990233403" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+  </div>
+
+  <script>
+    document.getElementById('burger').addEventListener('click', function(){
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('#navLinks a').forEach(function(a){
+      a.addEventListener('click', function(){ document.getElementById('navLinks').classList.remove('open'); });
+    });
+    // Форма — ЗАГЛУШКА. Подключить к Битрикс24 (webhook), затем отдавать PDF-кит.
+    function submitForm(e){
+      e.preventDefault();
+      window.location.href = 'kit/smart-interior-partner-kit_v2.pdf';
+      return false;
+    }
+  </script>
+</body>
+</html>
